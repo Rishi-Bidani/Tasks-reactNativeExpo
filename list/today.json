@@ -1,0 +1,10 @@
+{
+	"swipe1": {
+		"key": "1",
+		"text": "Swipe1Text changed"
+	},
+	"swipe2": {
+		"key": "2",
+		"text": "Swipe2Text"
+	}
+}
