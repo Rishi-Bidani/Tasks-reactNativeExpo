@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/Home";
 import Details from "../screens/Details";
 import Today from "../screens/Today";
+import ShopList from "../screens/list";
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,7 @@ function MainStackNavigator() {
 				/>
 				<Stack.Screen name="Details" component={Details} />
 				<Stack.Screen name="Today" component={Today} />
+				<Stack.Screen name="List" component={ShopList} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

@@ -12,18 +12,16 @@ import {
 
 const data = [
 	{ id: "a", value: "Today", nav: "Today" },
-	{ id: "b", value: "This Week", nav: "Details" },
+	{ id: "b", value: "List", nav: "List" },
 	{ id: "c", value: "Time Table", nav: "Details" },
 ];
 
 const WIDTH = Dimensions.get("window").width;
 const numColumns = 3;
-// const size = Dimensions.get("window").width / numColumns;
+
 import Swipeout from "react-native-swipeout";
 
 let todayJson = require("../../list/today.json");
-
-console.log("yup", todayJson);
 
 let swipeBtns = [
 	{
@@ -53,7 +51,6 @@ for (var key in myList) {
 	var value = myList[key];
 	swipeText.push(value);
 }
-// console.log(value.text);
 
 export default function Home({ navigation }) {
 	{
@@ -102,14 +99,6 @@ export default function Home({ navigation }) {
 						>
 							<Text style={styles.buttonText}>{item.value}</Text>
 						</TouchableOpacity>
-						<View
-							style={{
-								borderBottomColor: "black",
-								borderBottomWidth: 1,
-								alignSelf: "stretch",
-								marginTop: 20,
-							}}
-						/>
 					</View>
 				)}
 				// keyExtractor={(item) => item.id}
@@ -133,6 +122,9 @@ const styles1 = StyleSheet.create({
 	itemContainer: {
 		width: 120,
 		height: 100,
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "center",
 	},
 });
 
@@ -141,11 +133,8 @@ const styles = StyleSheet.create({
 		backgroundColor: "lightgrey",
 	},
 	container: {
-		// flex: 1,
-		// justifyContent: "center",
 		alignItems: "center",
 		backgroundColor: "#ebebeb",
-		// marginLeft: 10,
 		marginTop: 10,
 	},
 	text: {
