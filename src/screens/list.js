@@ -95,7 +95,7 @@ class ShopList extends React.Component {
 
 			if (mydata !== null) {
 				data = JSON.parse(mydata);
-				console.log("the data", data);
+				// console.log("the data", data);
 			} else {
 			}
 		} catch (err) {

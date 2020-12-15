@@ -4,7 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Home from "../screens/Home";
 import Details from "../screens/Details";
-import Today from "../screens/Today";
+import Today from "../screens/today2";
 import ShopList from "../screens/list";
 
 const Stack = createStackNavigator();
@@ -27,7 +27,7 @@ function MainStackNavigator() {
 					options={{ title: "Tasks" }}
 				/>
 				<Stack.Screen name="Details" component={Details} />
-				<Stack.Screen name="Today" component={Today} />
+				<Stack.Screen name="Weekly Tasks" component={Today} />
 				<Stack.Screen name="List" component={ShopList} />
 			</Stack.Navigator>
 		</NavigationContainer>
