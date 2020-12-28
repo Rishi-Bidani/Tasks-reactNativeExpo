@@ -4,7 +4,6 @@ import {
 	StyleSheet,
 	View,
 	Text,
-	TextInput,
 	Dimensions,
 	Button,
 	FlatList,
@@ -17,7 +16,7 @@ import {
 	TouchableHighlight,
 	TouchableOpacity,
 } from "react-native-gesture-handler";
-import { Card } from "react-native-paper";
+import { Card, TextInput } from "react-native-paper";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 let data = [];
@@ -51,6 +50,7 @@ class ShopList extends React.Component {
 		});
 	};
 	addToData() {
+		this.textInput.clear();
 		if (this.state.inputTxt != "") {
 			const addId =
 				this.state.products.length >= 1
@@ -163,6 +163,7 @@ class ShopList extends React.Component {
 						maxLength={200}
 						style={styles.input}
 						placeholder="List Item"
+						onSubmitEditing={() => this.addToData()}
 						ref={(input) => {
 							this.textInput = input;
 						}}
@@ -170,7 +171,6 @@ class ShopList extends React.Component {
 					></TextInput>
 					<TouchableOpacity
 						onPress={() => {
-							this.textInput.clear();
 							this.addToData();
 						}}
 						style={styles.submit}
@@ -224,12 +224,9 @@ const styles = StyleSheet.create({
 	},
 	input: {
 		marginTop: "auto",
-		// bottom: 10,
-		color: "black",
 		width: WIDTH - WIDTH / 8,
 		height: 40,
-		borderColor: "#7a42f4",
-		borderWidth: 1,
+		backgroundColor: "lightgrey",
 	},
 	submit: {
 		backgroundColor: "lightgreen",
